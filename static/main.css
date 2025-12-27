@@ -38,10 +38,10 @@ nav{
     border-radius: 36px;
      border-color: rgb(83, 83, 84);
      display: flex;
-     width: 32%;
+     width: 26%;
      height: 50px;
      position: relative;
-     left: 47%;
+     left: 53%;
   margin-top: 20px;
 }
 nav ul{
@@ -181,3 +181,119 @@ footer{
 .g{
     color: #939393;
 }
+
+
+/* ===== MORE MENU (DOTS MENU STYLE) ===== */
+
+.dropdown {
+  position: relative;
+}
+
+/* "More" trigger (acts like dots button) */
+.dropdown > .nav-link {
+  background: transparent;
+  border: none;
+  color: #c8c7c7;
+
+  
+  border-radius: 8px;
+
+  font-size: 16px;
+  cursor: pointer;
+  line-height: 1;
+
+  transition: background 0.2s ease;
+}
+
+/* Subtle hover like navbar items */
+.dropdown > .nav-link:hover {
+  background: #242424;
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+  position: absolute;
+  top: 120%;
+  right: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+
+  padding: 8px;
+  min-width: 170px;
+
+  background: #1a1a1a;
+  border-radius: 12px;
+
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.45);
+
+  opacity: 0;
+  transform: translateY(8px);
+  pointer-events: none;
+
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+/* Show on hover */
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+  transition-delay: 0.12s;
+}
+
+/* Hover buffer */
+.dropdown-menu::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 0;
+  right: 0;
+  height: 10px;
+}
+
+/* Reset */
+.dropdown-menu li {
+  list-style: none;
+}
+
+/* Links */
+.dropdown-menu a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 8px 10px;
+  border-radius: 8px;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  color: #eaeaea;
+  text-decoration: none;
+
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+/* Hover effect */
+.dropdown-menu a:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateX(4px);
+}
+
+/* Icons */
+.dropdown-menu i {
+  width: 18px;
+  text-align: center;
+  font-size: 15px;
+  opacity: 0.85;
+}
+
+/* Brand hints */
+.fa-github { color: #6e5494; }
+.fa-file-pdf { color: #e63946; }
+.fa-envelope { color: #4dabf7; }
+.fa-linkedin { color: #0a66c2; }
+
+
