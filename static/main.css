@@ -297,5 +297,75 @@ footer{
 .fa-linkedin { color: #0a66c2; }
 
 /* dark-light mode*/
+.skills-section {
+  padding: 6rem 2rem;
+  text-align: center;
+}
+
+.skills-title {
+  font-size: 2.2rem;
+  color: #e5e7eb;
+  margin-bottom: 3rem;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 3rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.skill {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.skill img {
+  width: 56px;
+  height: 56px;
+  transition: transform 0.4s ease;
+}
+
+/* IMPORTANT: no filter, no fill override */
+.skill:hover img {
+  transform: scale(1.15);
+}
+
+.skill span {
+  font-size: 0.9rem;
+  color: #9ca3af;
+}
+
+/* Floating */
+.floating {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+  100% { transform: translateY(0); }
+}
+
+/* Delays */
+.d1 { animation-delay: 0s; }
+.d2 { animation-delay: .4s; }
+.d3 { animation-delay: .8s; }
+.d4 { animation-delay: 1.2s; }
+.d5 { animation-delay: 1.6s; }
+.d6 { animation-delay: 2s; }
+.d7 { animation-delay: 2.4s; }
+.d8 { animation-delay: 2.8s; }
+.d9 { animation-delay: 3.2s; }
+.d10 { animation-delay: 3.6s; }
+
+.skill:hover img {
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 12px rgba(255,255,255,0.35));
+}
+
 
 
