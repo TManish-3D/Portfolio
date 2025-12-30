@@ -22,9 +22,9 @@
  <div class="main">
    <div class="mainheader"><h1>Manish Timsina</h1>
     <nav><ul>
-            <li><a href="about" class="nav-link">About</a></li>
-            <li><a href="/skills" class="nav-link">Skills</a></li>
-            <li><a href="/projects" class="nav-link">Projects</a></li>
+            <li><a href="about" class="nav-link" data-route>About</a></li>
+            <li><a href="/skills" class="nav-link" data-route>Skills</a></li>
+            <li><a href="/projects" class="nav-link" data-route>Projects</a></li>
             
             <li class="dropdown"> <a href="#" class="nav-link">More </a> <ul class="dropdown-menu"> <li><a href="{{ url_for('static', filename='resume.pdf') }}" target="_blank"> <i class="fa-solid fa-file-pdf"></i> Resume </a></li> <li><a href="https://github.com/TManish-3D" target="_blank"> <i class="fa-brands fa-github"></i> GitHub </a></li> <li><a href="https://mail.google.com/mail/?view=cm&fs=1&to=mtimsina91@yourdomain.com"> <i class="fa-solid fa-envelope"></i> Gmail </a></li>  <li>
       <a href="https://www.linkedin.com/in/manishpy99" target="_blank">
@@ -35,16 +35,69 @@
         </ul></nav>
       </div><br>
 {% block content %}
+<div class="main" id="main-container">
+<div class="page" id="page">
+  
+
 <div class="image"><img src="{{ url_for('static', filename='blackpp.jpg') }}"></div>
 <div class="about"><h1>Hi, I'm <span class="f">Backe</span><span class="fade">nd Developer</span><span class="g"> and</span><br>
 <span>3D Artist</span></h1></div>
 <div class="dis"><p>I am a backend developer specializing in Flask, focused on building secure databases, APIs, and authentication systems, and I follow clean architecture and best practices to ensure long-term maintainability.</p></div>
 {% endblock %}
+</div></div>
 </div>
     
     
 </div>
 <!--<li><a href="{{ url_for('static', filename='resume.pdf') }}" target="_blank" class="nav-link">Resume</a></li>-->
+<script>
+const links = document.querySelectorAll('[data-route]');
+const main = document.querySelector('.main');
+
+links.forEach(link => {
+    link.addEventListener('click', e => {
+        e.preventDefault();
+
+        const mainRect = main.getBoundingClientRect();
+        const linkRect = link.getBoundingClientRect();
+
+        // origin inside main
+        const originX = linkRect.left - mainRect.left + linkRect.width / 2 + 'px';
+        const originY = linkRect.top - mainRect.top + linkRect.height / 2 + 'px';
+
+        sessionStorage.setItem('originX', originX);
+        sessionStorage.setItem('originY', originY);
+        sessionStorage.setItem('targetUrl', link.href);
+
+        const page = document.getElementById('page');
+        page.classList.remove('active');
+
+        setTimeout(() => {
+            window.location.href = link.href;
+        }, 50);
+    });
+});
+
+window.addEventListener('DOMContentLoaded', () => {
+    const page = document.getElementById('page');
+    if (!page) return;
+
+    const originX = sessionStorage.getItem('originX') || '50%';
+    const originY = sessionStorage.getItem('originY') || '50%';
+
+    page.style.setProperty('--origin-x', originX);
+    page.style.setProperty('--origin-y', originY);
+
+    requestAnimationFrame(() => {
+        page.classList.add('active');
+    });
+
+    sessionStorage.removeItem('originX');
+    sessionStorage.removeItem('originY');
+    sessionStorage.removeItem('targetUrl');
+});
+
+</script>
 
 
 </body>
