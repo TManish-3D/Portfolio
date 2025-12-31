@@ -125,22 +125,24 @@ nav li a {
     left: 25px;
 }
 .image{
-width: 160px;
-height: 160px;
+width: 300px;
+height: 300px;
 overflow: hidden;
-border: 1px solid black;
+border: 1px solid rgb(96, 92, 92);
 border-radius: 50%;
 margin-left: 55px;
 margin-top: 35px;
 }
 .image img{
 position: relative;
-right: 250px;
-top: -130px;
+right: 200px;
+top: -100px;
 }
 .about h1{
-    margin-left: 55px;
-    
+  margin-left: 55px;
+  position: relative;
+  top: -250px;
+  left: 400px;
   font-family: 'Inter', sans-serif;
   font-size: 46px;
   font-weight: 400;
@@ -161,9 +163,10 @@ top: -130px;
 font-size: 15.6px;
 font-family: 'Inter',sans-serif;
 line-height: 1.7;
-color: #c2bdbd;
+color: #c9c9c9;
 position: relative;
-top: -35px;
+ left: 400px;
+top: -270px;
 
 
 }
@@ -291,10 +294,9 @@ footer{
 }
 
 /* Brand hints */
-.fa-github { color: #6e5494; }
-.fa-file-pdf { color: #e63946; }
-.fa-envelope { color: #4dabf7; }
-.fa-linkedin { color: #0a66c2; }
+
+.fa-file-pdf { color: #d09ea3; }
+
 
 /* dark-light mode*/
 .skills-section {
@@ -347,6 +349,28 @@ footer{
 }
 .page.active {
   transform: scale(1);
+}
+/* icons css */
+.icons {
+ 
+  position: relative;
+  left: 155px;
+  bottom: -34px;
+  display: flex;
+  gap: 23px;
+
+}
+.fa-github{
+  color: white;
+  font-size: 25px;
+}
+.fa-message{
+  color: white;
+  font-size: 25px;
+}
+.fa-linkedin{
+  color: white;
+  font-size: 25px;
 }
 
 
