@@ -9,7 +9,7 @@ h1{
 }
 body{
     background-color: #1a1a1a;
-
+    overflow: hidden;
 }
 .main{
     background-color: #1a1a1a;
@@ -30,7 +30,7 @@ body{
     margin: 130px 130px ;
     margin-top: 34px;
     height: 650px;
-
+    
 }
 nav{
     background-color:#242424 ;
@@ -43,6 +43,7 @@ nav{
      position: relative;
      left: 53%;
   margin-top: 20px;
+  z-index: 9999;
 }
 nav ul{
     list-style-type: none;
@@ -297,27 +298,83 @@ footer{
 
 .fa-file-pdf { color: #d09ea3; }
 
+/*Button */
+
 
 /* dark-light mode*/
+/* =========================
+   SKILLS SECTION (IMPROVED)
+   Layout unchanged
+   ========================= */
 .skills-section {
-  padding: 6rem 2rem;
-  text-align: center;
+  min-height: 100vh;
+  padding: 80px 10%;
+
+  color: #e5e7eb;
 }
 
 .skills-title {
-  font-size: 2.2rem;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  color: #e5e7eb;
-  margin-bottom: 3rem;
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+  position: relative;
+  bottom: 85px;
+  font-family: 'Inter', sans-serif;
 }
 
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
-  gap: 3rem;
-  max-width: 900px;
-  margin: 0 auto;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 30px;
+  position: relative;
+  bottom: 85px;
 }
+
+.skill-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 30px 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.skill-card i {
+  font-size: 3.2rem;
+  margin-bottom: 12px;
+  transition: all 0.3s ease;
+}
+
+.skill-card span {
+  display: block;
+  font-size: 1rem;
+  margin-top: 6px;
+  opacity: 0.85;
+  font-family: 'Inter', sans-serif;
+}
+
+/* 🔥 Glow Effect on Hover */
+.skill-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  border-color: rgba(56, 189, 248, 0.6);
+  box-shadow:
+    0 0 25px rgba(56, 189, 248, 0.25),
+    0 0 60px rgba(56, 189, 248, 0.15);
+}
+
+.skill-card:hover i {
+  filter: drop-shadow(0 0 12px rgba(56, 189, 248, 0.9));
+}
+
+.skill-card:hover span {
+  opacity: 1;
+}
+
+
+
 
 .page {
   position: absolute; /* overlay entire viewport */
@@ -330,7 +387,8 @@ footer{
   opacity: 0;
   background-color: #1a1a1a; /* match your page bg */
   transition: transform 0.5s cubic-bezier(0.4,0,0.2,1), opacity 0.5s cubic-bezier(0.4,0,0.2,1);
-  z-index: 2;
+  z-index: 1;
+  inset: 0;
 }
 .main {
   position: relative; /* important for children positioning */
@@ -372,6 +430,40 @@ footer{
   color: white;
   font-size: 25px;
 }
+/*  skills icons css */
+
+.devicon-postgresql-plain{
+  font-size: 80px;
+  
+}
+.devicon-html5-plain{
+  font-size: 80px;
+}
+.devicon-css3-plain{
+   font-size: 80px;
+}
+.devicon-fastapi-plain{
+  font-size: 80px;
+}
+.devicon-mysql-original{
+  font-size: 80px;
+}
+.devicon-amazonwebservices-plain-wordmark{
+  font-size: 80px;
+}
+.devicon-docker-plain{
+  font-size: 80px;
+}
+.devicon-git-plain {
+  font-size: 80px;
+}
+.devicon-github-original{
+  font-size: 80px;
+}
+.devicon-flask-original{
+  font-size: 80px;
+}
+
 
 
 
