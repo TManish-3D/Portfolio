@@ -41,7 +41,7 @@ nav{
      width: 26%;
      height: 50px;
      position: relative;
-     left: 53%;
+     left: 50%;
   margin-top: 20px;
   z-index: 9999;
 }
@@ -296,7 +296,7 @@ footer{
 
 /* Brand hints */
 
-.fa-file-pdf { color: #d09ea3; }
+.fa-file-pdf { color: #ce0dd4; }
 
 /*Button */
 
@@ -463,6 +463,339 @@ footer{
 .devicon-flask-original{
   font-size: 80px;
 }
+  
+/*responsive
+@media (max-width: 1024px)
+{
+  .outer{
+     margin: 70px 70px ;
+     height: 700px;
+  }
+  .main{
+
+  }
+  h1{
+     font-size: 25px;
+  font-weight: 500;
+  }
+  nav{
+     width: 26%;
+     height: 35px;
+      position: relative;
+     left: 30%;
+  margin-top: 10px;
+  }
+}  */
+
+@media (max-width: 1024px) {
+  /* Reduce outer margins */
+  .outermost {
+    margin: 60px 40px;
+    margin-top: 20px;
+    height: auto;
+    min-height: 600px;
+  }
+    .main {
+    margin: 10px;
+    height: auto;
+    min-height: 600px;
+    
+    padding-bottom: 30px;
+  }
+
+  /* Adjust navigation width and positioning */
+  nav {
+    width: 32%;
+    left: 30%;
+    height: 45px;
+    padding: 10px;
+  }
+
+  nav ul {
+    gap: 20px;
+    font-size: 20px;
+   
+    
+  }
+  .nav-link {
+   
+    bottom: 7px;
+     right: 25px;
+  }
+  .dropdown > .nav-link {
+    font-size: 20px;
+  }
+
+  /* Adjust top bar */
+  .top {
+    width: 40%;
+    left: 30%;
+  }
+
+  /* Make image smaller */
+  .image {
+    width: 220px;
+    height: 220px;
+    margin-left: 40px;
+    margin-top: 35px;
+  }
+ 
+
+  /* Adjust about section positioning */
+  .about h1 {
+    font-size: 33px;
+    left: 300px;
+    top: -200px;
+  }
+
+  /* Adjust description positioning */
+  .dis p {
+    font-size: 19px;
+    left: 300px;
+    top: -220px;
+  }
+
+  /* Adjust icons */
+  .icons {
+    left: 120px;
+    bottom: -20px;
+    gap: 18px;
+  }
+
+  .fa-github,
+  .fa-message,
+  .fa-linkedin {
+    font-size: 27px;
+  }
+
+  /* Skills grid adjustment */
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 20px;
+  }
+
+  .skill-card {
+    padding: 20px 15px;
+  }
+
+  .skill-card i {
+    font-size: 2.5rem;
+  }
+
+  /* Devicon sizes */
+  .devicon-postgresql-plain,
+  .devicon-html5-plain,
+  .devicon-css3-plain,
+  .devicon-fastapi-plain,
+  .devicon-mysql-original,
+  .devicon-amazonwebservices-plain-wordmark,
+  .devicon-docker-plain,
+  .devicon-git-plain,
+  .devicon-github-original,
+  .devicon-flask-original {
+    font-size: 60px;
+  }
+}
+
+/* Mobile Devices (max-width: 768px) */
+@media only screen and (min-width: 440px) and (max-width: 768px) {
+  /* Enable scrolling on mobile devices */
+  body {
+    overflow: auto;
+    overflow-x: hidden;
+  }
+
+  /* Allow main container to scroll and adjust height */
+  .main {
+    margin: 10px;
+    height: auto;
+    min-height: 500px;
+    overflow-y: hidden;
+    padding-bottom: 30px;
+  }
+
+  /* Full width layout */
+  .outermost {
+    margin: 20px 15px;
+    margin-top: 15px;
+    height: auto;
+    min-height: auto;
+  }
+
+  /* Stack layout vertically */
+  .mainheader {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Adjust h1 for mobile visibility */
+  .mainheader h1 {
+    left: 0;
+    font-size: 22px;
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+
+  /* Full width responsive navigation */
+  nav {
+    width: 80%;
+    left: 5%;
+    margin-top: 10px;
+    justify-content: center;
+    padding: 8px;
+    position: relative;
+    left: 5px;
+    height: 45px;
+  }
+
+  nav ul {
+    gap: 30px;
+    font-size: 20px;
+    padding: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+  }
+
+  .nav-link {
+    right: 0;
+    bottom: 7px;
+  }
+  .dropdown > .nav-link {
+    font-size: 20px;
+  }
+
+  /* Adjust top bar */
+  .top {
+    width: 50%;
+    left: 25%;
+    height: 35px;
+  }
+
+  /* Center and resize image for mobile */
+  .image {
+    width: 180px;
+    height: 180px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    display: block;
+  }
+
+  .image img {
+    right: 230px;
+    top: -120px;
+  }
+
+  /* Stack about section for mobile readability */
+  .about h1 {
+    font-size: 24px;
+    left: 0;
+    top: 15px;
+    text-align: center;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 10px;
+  }
+
+  /* Stack description for mobile */
+  .dis {
+    grid-template-columns: 1fr;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .dis p {
+    font-size: 16px;
+    left: 0;
+    top: 5px;
+    text-align: center;
+    padding: 0 10px;
+  }
+
+  /* Center icons for mobile */
+  .icons {
+    left: 0;
+    bottom: auto;
+    top: 20px;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    padding-bottom: 20px;
+  }
+
+  /* Dropdown menu adjustments */
+  .dropdown-menu {
+    right: auto;
+    left: 50%;
+    transform: translateX(-50%) translateY(8px);
+  }
+
+  .dropdown:hover .dropdown-menu {
+    transform: translateX(-50%) translateY(0);
+  }
+
+  /* Skills section */
+  .skills-section {
+    padding: 40px 5%;
+  }
+
+  .skills-title {
+    font-size: 2rem;
+    bottom: 74px;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap:10px;
+    bottom: 80px;
+  }
+
+  .skill-card {
+    padding: 5px 10px;
+   
+    
+  }
+
+  .skill-card i {
+    font-size: 3rem;
+  }
+
+  .skill-card span {
+    font-size: 1rem;
+  }
+
+  /* Devicon sizes */
+  .devicon-postgresql-plain,
+  .devicon-html5-plain,
+  .devicon-css3-plain,
+  .devicon-fastapi-plain,
+  .devicon-mysql-original,
+  .devicon-amazonwebservices-plain-wordmark,
+  .devicon-docker-plain,
+  .devicon-git-plain,
+  .devicon-github-original,
+  .devicon-flask-original {
+    font-size: 45px;
+  }
+
+  /* Circle decorations */
+  .circle {
+    gap: 8px;
+  }
+
+  .circle div {
+    width: 12px;
+    height: 12px;
+    left: 15px;
+  }
+}
+
+
+  
+
 
 
 
