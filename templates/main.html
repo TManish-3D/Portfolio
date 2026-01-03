@@ -78,14 +78,13 @@ links.forEach(link => {
 
         sessionStorage.setItem('originX', originX);
         sessionStorage.setItem('originY', originY);
-        sessionStorage.setItem('targetUrl', link.href);
 
         const page = document.getElementById('page');
         page.classList.remove('active');
 
         setTimeout(() => {
             window.location.href = link.href;
-        }, 50);
+        }, 20);
     });
 });
 
@@ -103,9 +102,7 @@ window.addEventListener('DOMContentLoaded', () => {
         page.classList.add('active');
     });
 
-    sessionStorage.removeItem('originX');
-    sessionStorage.removeItem('originY');
-    sessionStorage.removeItem('targetUrl');
+    sessionStorage.clear()
 });
 
 </script>
