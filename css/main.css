@@ -1,0 +1,85 @@
+/* --- Reference-like portfolio styles --- */
+:root{
+  --bg: #ffffff;
+  --text: #111111;
+  --muted: #7a7a7a;
+  --accent: #000000;
+  --container: 1100px;
+}
+
+/* Dark mode variables applied when body.dark is set */
+body.dark{
+  --bg: #0b0b0b;
+  --text: #e6e6e6;
+  --muted: #9a9a9a;
+  --accent: #ffffff;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background:var(--bg);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+.container{max-width:var(--container);margin:0 auto;padding:0 28px}
+
+/* Top header */
+.top{padding:28px 0}
+.top-inner{display:flex;align-items:center;justify-content:space-between}
+.brand{font-family:'Playfair Display', serif;font-weight:700;font-size:16px;text-transform:none;color:var(--text)}
+.top-nav a{color:var(--text);text-decoration:none;margin-left:28px;font-size:14px}
+.top-nav{white-space:nowrap}
+
+.theme-toggle{background:transparent;border:1px solid rgba(0,0,0,0.06);padding:8px;border-radius:8px;cursor:pointer;margin-left:18px}
+.theme-toggle i{font-size:14px;color:var(--muted)}
+
+.links .social-link{color:var(--text);text-decoration:none;margin-right:12px;font-size:18px}
+.links .social-link i{vertical-align:middle}
+
+/* Portrait (round) */
+.portrait{width:480px;height:480px;border-radius:50%;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;background:transparent;border:none;box-shadow:none;position:relative}
+.portrait .portrait-img{width:100%;height:100%;object-fit:cover;display:block;border-radius:50%;mix-blend-mode:normal;filter:none;transition:filter 220ms ease}
+
+/* Remove decorative frame/background so PNG transparency merges with page background */
+body:not(.dark) .portrait{background:transparent}
+body.dark .portrait{background:transparent}
+
+/* Hero */
+.hero{display:grid;grid-template-columns:1fr 520px;gap:48px;align-items:center;padding:60px 0}
+.hero-left h1{font-family:'Playfair Display', serif;font-size:52px;line-height:1.02;margin:0 0 12px;color:var(--text);font-weight:700}
+.links{color:var(--muted);margin-bottom:18px}
+.desc{color:var(--muted);max-width:560px;margin-bottom:22px}
+.cta{display:inline-block;padding:10px 18px;border:1px solid var(--text);color:var(--text);text-decoration:none;border-radius:4px;font-weight:600}
+
+.awards{display:flex;gap:36px;margin-top:48px;flex-wrap:wrap}
+.award{display:flex;gap:14px;align-items:flex-start}
+.award i{font-size:22px;color:var(--text);margin-top:3px}
+.award strong{display:block;font-size:14px}
+.muted{color:var(--muted);font-size:13px;margin:2px 0 0}
+
+.hero-right{text-align:right}
+.hero-right .portrait{max-width:520px;width:100%;height:auto}
+
+/* smooth color transitions */
+body, .top, .hero, .brand, .top-nav a, .links, .desc, .award strong {transition: color 220ms ease, background-color 220ms ease}
+
+/* Responsive */
+@media (max-width:1100px){
+  .hero{grid-template-columns:1fr 420px}
+  .hero-left h1{font-size:44px}
+}
+@media (max-width:880px){
+  .top-inner{padding:0 12px}
+  .hero{grid-template-columns:1fr;gap:36px;padding:36px 0}
+  .hero-right{order:2;text-align:center}
+  .hero-right img{max-width:420px}
+  .hero-left h1{font-size:36px}
+}
+@media (max-width:420px){
+  .hero-left h1{font-size:24px}
+  .top-nav a{margin-left:12px;font-size:13px}
+}

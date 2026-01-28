@@ -1,11 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Manish Timsina-Portfolio</title>
-</head>
-<body>
-    <h1>Manish Timsina</h1>
-</body>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Manish Timsina — Portfolio</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="css/main.css">
+	</head>
+	<body>
+		<header class="top">
+			<div class="container top-inner">
+				<div class="brand">manish.</div>
+				<nav class="top-nav">
+					<a href="#work">Work</a>
+					<a href="#about">About</a>
+					<a href="#contact">Contact</a>
+					<button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme"><i class="fa-solid fa-moon"></i></button>
+				</nav>
+			</div>
+		</header>
+
+		<main>
+			<section class="hero container">
+				<div class="hero-left">
+					<h1>Manish Timsina is Backend Developer in Nepal.</h1>
+					<p class="links">
+						<a href="#" class="social-link" title="GitHub"><i class="fab fa-github"></i></a>
+						<a href="#" class="social-link" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+						<span class="muted">— Medium</span>
+					</p>
+					<p class="desc">I design simple, elegant interfaces and build frontends that feel fast and refined. I focus on typography, spacing and micro-interactions.</p>
+					<a class="cta" href="#work">View work</a>
+
+					<div class="awards">
+						<div class="award">
+							<i class="fa-brands fa-apple"></i>
+							<div>
+								<strong>Appstore Editors' Choice</strong>
+								<p class="muted">Appstore featured</p>
+							</div>
+						</div>
+						<div class="award">
+							<i class="fa-solid fa-award"></i>
+							<div>
+								<strong>App of the Day</strong>
+								<p class="muted">Featured in app store</p>
+							</div>
+						</div>
+						<div class="award">
+							<i class="fa-solid fa-paw"></i>
+							<div>
+								<strong>UX Essential Portfolios</strong>
+								<p class="muted">Featured list</p>
+							</div>
+						</div>
+						<div class="award">
+							<i class="fa-solid fa-globe"></i>
+							<div>
+								<strong>Interaction Latin America</strong>
+								<p class="muted">Speaker</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<aside class="hero-right">
+					<div class="portrait">
+						<!-- Use PNG with transparency (no JPG fallback) -->
+						<img class="portrait-img" src="images/blackpp-removebg-preview.png" alt="Manish Timsina" />
+					</div>
+				</aside>
+			</section>
+		</main>
+
+		<script src="js/script.js"></script>
+	</body>
 </html>
