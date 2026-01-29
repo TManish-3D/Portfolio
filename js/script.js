@@ -1,5 +1,22 @@
 // Minimal smooth-scroll for internal links
 document.addEventListener('DOMContentLoaded', function(){
+	// Menu toggle functionality
+	var menuToggle = document.getElementById('menu-toggle');
+	var navMenu = document.getElementById('nav-menu');
+	
+	if(menuToggle && navMenu){
+		menuToggle.addEventListener('click', function(){
+			navMenu.classList.toggle('active');
+		});
+		
+		// Close menu when a link is clicked
+		navMenu.querySelectorAll('a').forEach(function(link){
+			link.addEventListener('click', function(){
+				navMenu.classList.remove('active');
+			});
+		});
+	}
+
 	document.querySelectorAll('a[href^="#"]').forEach(function(a){
 		a.addEventListener('click', function(e){
 			var href = a.getAttribute('href');

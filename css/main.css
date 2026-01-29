@@ -28,13 +28,14 @@ body{
 .container{max-width:var(--container);margin:0 auto;padding:0 28px}
 
 /* Top header */
-.top{padding:28px 0}
+.top{padding:28px 0;position:relative}
 .top-inner{display:flex;align-items:center;justify-content:space-between}
 .brand{font-family:'Playfair Display', serif;font-weight:700;font-size:16px;text-transform:none;color:var(--text)}
-.top-nav a{color:var(--text);text-decoration:none;margin-left:28px;font-size:14px}
-.top-nav{white-space:nowrap}
-
-.theme-toggle{background:transparent;border:1px solid rgba(0,0,0,0.06);padding:8px;border-radius:8px;cursor:pointer;margin-left:18px}
+.top-nav{display:flex;align-items:center;gap:28px;white-space:nowrap}
+.top-nav a{color:var(--text);text-decoration:none;font-size:14px}
+.menu-toggle{display:none;background:transparent;border:none;font-size:20px;cursor:pointer;color:var(--text);padding:8px}
+.menu-toggle i{display:block}
+.theme-toggle{background:transparent;border:1px solid rgba(0,0,0,0.06);padding:8px;border-radius:8px;cursor:pointer}
 .theme-toggle i{font-size:14px;color:var(--muted)}
 
 .links .social-link{color:var(--text);text-decoration:none;margin-right:12px;font-size:18px}
@@ -74,12 +75,20 @@ body, .top, .hero, .brand, .top-nav a, .links, .desc, .award strong {transition:
 }
 @media (max-width:880px){
   .top-inner{padding:0 12px}
-  .hero{grid-template-columns:1fr;gap:36px;padding:36px 0}
-  .hero-right{order:2;text-align:center}
-  .hero-right img{max-width:420px}
+  .menu-toggle{display:block}
+  .top-nav{position:absolute;top:60px;left:0;right:0;flex-direction:column;gap:0;background:var(--bg);border-bottom:1px solid rgba(0,0,0,0.06);padding:16px 28px;max-height:0;overflow:hidden;transition:max-height 300ms ease;z-index:100}
+  .top-nav.active{max-height:400px}
+  .top-nav a{padding:10px 0;font-size:15px}
+  .top-nav .theme-toggle{margin-top:8px;border:1px solid rgba(0,0,0,0.06)}
+  .hero{grid-template-columns:1fr;gap:48px;padding:36px 0;align-items:center}
+  .hero-right{order:-1;text-align:center}
+  .hero-right .portrait{max-width:200px;width:100%;height:200px;margin:0 auto}
+  .hero-left{text-align:center}
+  .portrait{width:200px;height:200px}
   .hero-left h1{font-size:36px}
 }
 @media (max-width:420px){
   .hero-left h1{font-size:24px}
-  .top-nav a{margin-left:12px;font-size:13px}
+  .hero-right .portrait{max-width:150px;height:150px}
+  .portrait{width:150px;height:150px}
 }
