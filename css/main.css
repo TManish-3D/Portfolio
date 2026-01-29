@@ -76,8 +76,8 @@ body, .top, .hero, .brand, .top-nav a, .links, .desc, .award strong {transition:
 @media (max-width:880px){
   .top-inner{padding:0 12px}
   .menu-toggle{display:block}
-  .top-nav{position:absolute;top:60px;left:0;right:0;flex-direction:column;gap:0;background:var(--bg);border-bottom:1px solid rgba(0,0,0,0.06);padding:16px 28px;max-height:0;overflow:hidden;transition:max-height 300ms ease;z-index:100}
-  .top-nav.active{max-height:400px}
+  .top-nav{position:absolute;top:60px;left:0;right:0;flex-direction:column;gap:0;background:var(--bg);border-bottom:1px solid rgba(0,0,0,0.06);padding:16px 28px;max-height:0;overflow:hidden;transition:max-height 300ms ease;z-index:100;visibility:hidden}
+  .top-nav.active{max-height:400px;visibility:visible}
   .top-nav a{padding:10px 0;font-size:15px}
   .top-nav .theme-toggle{margin-top:8px;border:1px solid rgba(0,0,0,0.06)}
   .hero{grid-template-columns:1fr;gap:48px;padding:36px 0;align-items:center}
