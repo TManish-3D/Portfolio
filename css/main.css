@@ -2,7 +2,7 @@
 :root{
   --bg: #ffffff;
   --text: #111111;
-  --muted: #7a7a7a;
+  --muted: #424141;
   --accent: #000000;
   --container: 1100px;
 }
@@ -11,7 +11,7 @@
 body.dark{
   --bg: #0b0b0b;
   --text: #e6e6e6;
-  --muted: #9a9a9a;
+  --muted: #b4b0b0;
   --accent: #ffffff;
 }
 
@@ -35,11 +35,39 @@ body{
 .top-nav a{color:var(--text);text-decoration:none;font-size:14px}
 .menu-toggle{display:none;background:transparent;border:none;font-size:20px;cursor:pointer;color:var(--text);padding:8px}
 .menu-toggle i{display:block}
-.theme-toggle{background:transparent;border:1px solid rgba(0,0,0,0.06);padding:8px;border-radius:8px;cursor:pointer}
+.theme-toggle{background:transparent;border:1px solid rgba(0,0,0,0.06);padding:8px;border-radius:8px;cursor:pointer;color:var(--text);transition: color 180ms ease, background-color 180ms ease, border-color 180ms ease}
 .theme-toggle i{font-size:14px;color:var(--muted)}
 
-.links .social-link{color:var(--text);text-decoration:none;margin-right:12px;font-size:18px}
-.links .social-link i{vertical-align:middle}
+/* Social links and CTA */
+.links .social-link{color:var(--text);text-decoration:none;margin-right:12px;font-size:18px;transition: color 180ms ease, background-color 180ms ease, border-color 180ms ease}
+.links .social-link i{vertical-align:middle;color:inherit}
+
+.cta{display:inline-block;padding:10px 18px;border:1px solid var(--text);color:var(--text);text-decoration:none;border-radius:4px;font-weight:600;transition: color 180ms ease, background-color 180ms ease, border-color 180ms ease}
+
+/* Light mode hover: dark background + white text */
+.menu-toggle:hover, .theme-toggle:hover, .cta:hover:hover{
+  background: var(--text);
+  color: var(--bg);
+  border-color: rgba(0,0,0,0.12);
+}
+
+/* Dark mode hover: white background + black text */
+body.dark .menu-toggle:hover, body.dark .theme-toggle:hover, body.dark .cta:hover:hover{
+  background: var(--accent);
+  color: #000;
+  border-color: rgba(255,255,255,0.12);
+}
+
+/* Accessible keyboard focus outlines */
+.menu-toggle:focus-visible, .theme-toggle:focus-visible, .cta:focus-visible, .links .social-link:focus-visible{
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+  border-radius:6px;
+}
+
+@media (prefers-reduced-motion: reduce){
+  .menu-toggle, .theme-toggle, .cta, .links .social-link{ transition: none !important; }
+}
 
 /* Portrait (round) */
 .portrait{width:480px;height:480px;border-radius:50%;overflow:hidden;display:inline-flex;align-items:center;justify-content:center;background:transparent;border:none;box-shadow:none;position:relative}
