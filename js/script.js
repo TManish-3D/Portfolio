@@ -1,5 +1,8 @@
 // Minimal smooth-scroll for internal links
 document.addEventListener('DOMContentLoaded', function(){
+	// Initialize EmailJS
+	emailjs.init("8yLq6b6goMiL-j7fh");
+
 	// Menu toggle functionality
 	var menuToggle = document.getElementById('menu-toggle');
 	var navMenu = document.getElementById('nav-menu');
@@ -48,6 +51,42 @@ document.addEventListener('DOMContentLoaded', function(){
 				localStorage.setItem('theme','light');
 				themeBtn.innerHTML = '<i class="fa-solid fa-moon"></i>';
 			}
+		});
+	}
+
+	// Contact form validation and sending
+	var contactForm = document.querySelector('#contact form');
+	if(contactForm){
+		contactForm.addEventListener('submit', function(e){
+			e.preventDefault();
+			var name = document.getElementById('name').value.trim();
+			var email = document.getElementById('email').value.trim();
+			var message = document.getElementById('message').value.trim();
+			
+			if(!name || !email || !message){
+				alert('Please fill in all fields.');
+				return;
+			}
+			
+			// Basic email validation
+			var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+			if(!emailRegex.test(email)){
+				alert('Please enter a valid email address.');
+				return;
+			}
+			
+			// Send email using EmailJS
+			emailjs.send("service_e9gj8nv", "template_qdezkvv", {
+				from_name: name,
+				from_email: email,
+				message: message,
+				to_email: "mahithethala7@gmail.com"
+			}).then(function(response) {
+				alert("Message sent successfully!");
+				contactForm.reset();
+			}, function(error) {
+				alert("Failed to send message. Please try again.");
+			});
 		});
 	}
 });
